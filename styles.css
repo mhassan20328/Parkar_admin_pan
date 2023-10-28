@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+#annotation-canvas {
+  border: 1px solid #000;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+}

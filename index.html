@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YOLOv3/YOLOv4 Annotation Tool</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Include the JSZip library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+  <!-- Include the FileSaver library to enable ZIP download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+  <h1>YOLOv3/YOLOv4 Annotation Tool</h1>
+  <input type="file" id="image-upload" accept="image/*" multiple />
+  <canvas id="annotation-canvas" width="800" height="600"></canvas>
+  <button onclick="downloadAnnotations()">Download Annotations</button>
+  <button id="prev-image" onclick="prevImage()">Previous Image</button>
+  <button id="next-image" onclick="nextImage()">Next Image</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
