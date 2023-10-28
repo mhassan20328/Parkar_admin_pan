@@ -115,8 +115,12 @@ function downloadAnnotations() {
     const imageBlob = dataURItoBlob(image.src);
     const darknetText = darknetFormat.join('\n');
 
-    zip.file(`image${i}.png`, imageBlob);
-    zip.file(`annotation${i}.txt`, darknetText);
+    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); // Current date and time stamp
+    const imageFilename = `image_${timestamp}.png`;
+    const annotationFilename = `annotation_${timestamp}.txt`;
+
+    zip.file(imageFilename, imageBlob);
+    zip.file(annotationFilename, darknetText);
   }
 
   // Generate and download the ZIP file
