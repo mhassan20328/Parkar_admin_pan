@@ -1,0 +1,45 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    background-color: #f0f0f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#header {
+    background-color: #fff; /* Set the header background to white */
+    padding: 20px;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+
+}
+
+.logo-large {
+    max-width: 200px; /* Make the logo larger */
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Adjust the margin for button positioning */
+}
+
+.button {
+    background-color: #336699;
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Increase border radius for a more rounded look */
+    padding: 20px 40px; /* Increase padding for larger buttons */
+    cursor: pointer;
+    font-size: 20px; /* Adjust font size for larger buttons */
+    transition: background-color 0.3s;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    margin-bottom: 10px; /* Adjust margin for button positioning */
+}
+
+.button:hover {
+    background-color: #234d82;
+}

@@ -70,7 +70,7 @@ submitButton.addEventListener("click", function() {
       console.log(user.password)
     //log the email and passowrd returned by firebase
       window.alert("Success! Welcome back!");
-      window.location.href = 'annotation_tool.html'; // Replace with the actual URL of your annotation page
+      window.location.href = 'homepage.html'; // Replace with the actual URL of your annotation page
 
     })
     .catch((error) => {
