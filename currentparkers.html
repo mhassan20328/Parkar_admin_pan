@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Parkers Page</title>
+  <link rel="stylesheet" type="text/css" href="parker.css">
+</head>
+<body>
+    <!-- Table to display data -->
+    <!-- Header section -->
+<header>
+    <h1 id="headertext">Current Parkers</h1>
+    <div class="logo-container">
+        <img src="parkarlogo.jpg" alt="Logo" class="logo">
+        <label id="datetext" for="violation-date">Select Date:</label>
+        <input type="date" id="violation-date" name="violation-date">
+    </div>
+</header>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>License Plate</th>
+            <th>Entrance Time</th>
+        </tr>
+    </thead>
+    <tbody id="data-table-body"></tbody>
+</table>
+
+<script src="path/to/your/js/file.js"></script>
+
+</body>
+    <script type = "module" src = "parkers.js"></script></body>
+</html>
