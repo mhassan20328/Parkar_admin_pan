@@ -1,69 +1,59 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  header {
+    background-color: #333; 
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
+  }
+  
+  #headertext {
     margin: 0;
-}
-
-h1 {
-    color: #336699;
-    font-size: 24px;
-}
-
-.report {
-    border: 1px solid #ccc;
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 400px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-.report h2 {
-    color: #336699;
-    font-size: 18px;
-}
-
-.report p {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.report ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.report ul li {
-    font-size: 14px;
-    margin: 5px 0;
-}
-
-#report-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-}
-
-#report-list li {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  }
+  
+  .logo-container {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  table {
+    width: 80%;
+    margin: 20px auto; 
+    border-collapse: collapse;
+  }
+  
+  th, td {
     padding: 10px;
-    margin: 10px 0;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
+    border: 1px solid #ddd; 
+    text-align: center;
+  }
+  
+  thead {
+    background-color: #041e3b;
+    color: white;
+  }
+  
+  tbody {
+    background-color: white;
+  }
+  
+  img {
+    max-width: auto;
+    height: auto;
 
-#report-list li h2 {
-    color: #336699;
-    font-size: 16px;
-    margin: 0;
+  }
+#logoid{
+    width: 200px;
+    height: auto;
+    padding-top: 20px;
 }
-
-#report-list li p {
-    font-size: 14px;
-    margin: 5px 0;
-}
+  

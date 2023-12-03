@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="reportpage.css">
-    <title>Reports Page</title>
+  <title>Current Reports</title>
+  <link rel="stylesheet" type="text/css" href="reportpage.css">
 </head>
 <body>
-    <h1>Reports</h1>
-    <!-- report 1 -->
-    <div class="report 1">
-        <h2>Report 1</h2>
-        <p>Report 1 description</p>
-        <!-- bullet point list that has description rid uid and lpn -->
-        <ul>
-            <li>Description: 'Parked over the line'</li>
-            <li>rid: 1</li>
-            <li>uid: 900191797</li>
-            <li>lpn: م ق 9521</li>
-    <ul id="report-list"></ul>
-    <script type="module" src="reportpage.js"></script>
+    <!-- Table to display data -->
+    <!-- Header section -->
+<header>
+    <h1 id="headertext">Current Reports</h1>
+    <div class="logo-container">
+        <img src="parkarlogo.jpg" alt="Logo" class="logo" id="logoid">
+    </div>
+</header>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Report ID</th>
+            <th>Description</th>
+            <th>LPN</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody id="data-table-body"></tbody>
+</table>
 </body>
+    <script type = "module" src = "reportpage.js"></script></body>
 </html>
