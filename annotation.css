@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
-    color: #333; /* Dark text color */
+    background-color: #f0f0f0; 
+    color: #333; 
     margin: 0;
     padding: 0;
   }
@@ -11,16 +11,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #ccd1d6; /* Blue header background color */
+    background-color: #ccd1d6; 
   }
   
   .logo {
-    max-width: 100px; /* Adjust the size as needed */
+    max-width: 100px; 
     margin-right: 10px;
   }
   
   h1 {
-    color: #fff; /* White header text color */
+    color: #fff; 
   }
   
   #image-upload {
@@ -29,14 +29,14 @@ body {
   }
   
   #annotation-canvas {
-    border: 1px solid #333; /* Dark border for the canvas */
+    border: 1px solid #333; 
     display: block;
     margin: 20px auto;
   }
   
   button {
-    background-color: #007bff; /* Blue button background color */
-    color: #fff; /* White button text color */
+    background-color: #007bff; 
+    color: #fff; 
     padding: 10px 15px;
     border: none;
     cursor: pointer;
@@ -44,14 +44,14 @@ body {
   }
   
   button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
   }
   
   #prev-image, #next-image {
-    background-color: #333; /* Dark button background color */
+    background-color: #333; 
   }
   
   #prev-image:hover, #next-image:hover {
-    background-color: #555; /* Darker gray on hover */
+    background-color: #555; 
   }
   

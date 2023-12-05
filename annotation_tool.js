@@ -1,6 +1,4 @@
-// Description: JavaScript code for the annotation tool
-// Decleration of varaibles
-// Get the canvas and context
+
 let canvas = document.getElementById('annotation-canvas');
 let ctx = canvas.getContext('2d');
 // Image array to store the images
@@ -122,7 +120,7 @@ function downloadAnnotations() {
     const imageBlob = dataURItoBlob(image.src);
     const darknetText = darknetFormat.join('\n');
 
-    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); // Current date and time stamp
+    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); 
     const imageFilename = `${timestamp}.png`;
     const annotationFilename = `${timestamp}.txt`;
 

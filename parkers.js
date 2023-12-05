@@ -30,10 +30,8 @@ const firebaseConfig = {
 function populateTable(LParray, TimeArray) {
   const tableBody = document.getElementById('data-table-body');
 
-  // Clear existing rows in the table
   tableBody.innerHTML = '';
 
-  // Iterate through the data arrays and create rows
   for (let i = 0; i < LParray.length; i++) {
       const newRow = tableBody.insertRow();
 
