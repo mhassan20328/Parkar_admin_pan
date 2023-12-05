@@ -2,14 +2,17 @@
 <html>
 <head>
   <title>Annotation Tool V1</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="annotation.css">
   <!-- Include the JSZip library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
   <!-- Include the FileSaver library to enable ZIP download -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
-  <h1>YOLOv3/YOLOv4 Annotation Tool</h1>
+  <div class="header">
+    <img src="parkarlogo.png" alt="Logo" class="logo">
+    <h1>Parking Calibration Tool</h1>
+  </div>
   <input type="file" id="image-upload" accept="image/*" multiple />
   <canvas id="annotation-canvas" width="800" height="600"></canvas>
   <button onclick="downloadAnnotations()">Download Annotations</button>

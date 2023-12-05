@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ccd1d6; /* Blue header background color */
+  }
+  
+  .logo {
+    max-width: 100px; /* Adjust the size as needed */
+    margin-right: 10px;
+  }
+  
+  h1 {
+    color: #fff; /* White header text color */
+  }
+  
+  #image-upload {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #annotation-canvas {
+    border: 1px solid #333; /* Dark border for the canvas */
+    display: block;
+    margin: 20px auto;
+  }
+  
+  button {
+    background-color: #007bff; /* Blue button background color */
+    color: #fff; /* White button text color */
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  #prev-image, #next-image {
+    background-color: #333; /* Dark button background color */
+  }
+  
+  #prev-image:hover, #next-image:hover {
+    background-color: #555; /* Darker gray on hover */
+  }
+  
