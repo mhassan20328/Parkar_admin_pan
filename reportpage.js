@@ -36,6 +36,7 @@ const IDarray = [];
 const descriptionArray = [];
 const LPNarray = [];
 const ImageArray = [];
+const locationarray = [];
 
 
 
@@ -46,6 +47,7 @@ const ImageArray = [];
             // console.log(doc.id, " => ", doc.data());
                 IDarray.push(doc.id);
                 descriptionArray.push(doc.data().Description);
+                locationarray.push(doc.data().LatLng);
                 LPNarray.push(doc.data().LPN);
           });
       })
@@ -54,7 +56,7 @@ const ImageArray = [];
       });
 
 
-      function populateTable(IDarray, descriptionArray, LPNarray, ImageArray) {
+      function populateTable(IDarray, descriptionArray, LPNarray, ImageArray, locationarray) {
         const tableBody = document.getElementById('data-table-body');
       
         // Clear existing rows in the table
@@ -73,6 +75,7 @@ const ImageArray = [];
       
           const lpnCell = newRow.insertCell(2);
           lpnCell.textContent = LPNarray[i];
+
       
           const imageCell = newRow.insertCell(3);
           const img = document.createElement('img');
@@ -80,6 +83,10 @@ const ImageArray = [];
           img.alt = 'Report Image';
           img.style.width = '50px'; // Adjust the size as needed
           imageCell.appendChild(img);
+
+          const locationcell = newRow.insertCell(4);
+          locationcell.textContent = locationarray[i];
+
         }
       }
 //wait for 10 seconds
@@ -98,7 +105,7 @@ setTimeout(function() {
             // console.log("URL WORKED")
             ImageArray.push(url);
             if(ImageArray.length==IDarray.length){
-                populateTable(IDarray, descriptionArray, LPNarray, ImageArray);
+                populateTable(IDarray, descriptionArray, LPNarray, ImageArray,locationarray);
             }
             // console.log(ImageArray);
             }).catch((error) => {
