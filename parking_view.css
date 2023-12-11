@@ -1,19 +1,19 @@
 body {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    color: lightgray; /* Dark gray text color */
+    color: lightgray; 
 
 }
 #parkingContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Adjust as needed to control horizontal spacing */
+    justify-content: space-around; 
 }
 
 div {
     box-sizing: border-box;
-    flex: 0 0 calc(100% / 15); /* Adjust rowLimit as needed based on your design */
+    flex: 0 0 calc(100% / 15); 
     padding: 10px;
     text-align: center;
     margin: 5px;
@@ -23,13 +23,12 @@ div {
 img {
     max-width: 100%;
     height: auto;
-    max-height: 50px; /* Set a maximum height for the images */
+    max-height: 50px; 
 }
 h1 {
-    color: #0b3460; /* Blue heading color */
+    color: #0b3460; 
     align-self: center ;
     text-align: center;
-    /* background-color: white; */
+    
 }
 
-/* Add more specific styling based on your design requirements */

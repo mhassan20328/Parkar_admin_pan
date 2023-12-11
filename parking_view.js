@@ -33,7 +33,7 @@ const firebaseConfig = {
 
 const startIterator = 0; 
 const endIterator = 25;   
-
+// using async function to fetch data from firestore database in correct timing
 const fetchData = async () => {
   const testarray1 = [];
   const testarray2 = [];
@@ -72,6 +72,7 @@ const fetchData = async () => {
     // Sample data
     const parkingspots=await fetchData();
     console.log(parkingspots);
+    // designate what the types of spots are
     const spotTypes = ["disabilty", "disabilty", "disabilty", "electric","electric",
     "electric", "parking", "parking", "parking","parking","parking", "parking", "parking", "parking","parking","parking", "parking", "parking", "parking","parking",
     "parking", "parking", "parking", "parking","parking","parking"];
@@ -115,7 +116,7 @@ const fetchData = async () => {
         // Append the parking spot div to the container
         parkingContainer.appendChild(spotDiv);
 
-        // Add a line break after every 'rowLimit' spots
+        // Add a line break after every rowLimit spots to create more rows to create abstract rep of parking lot
         if ((i + 1) % rowLimit === 0) {
             parkingContainer.appendChild(document.createElement('br'));
         }

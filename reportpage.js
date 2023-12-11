@@ -55,7 +55,7 @@ const locationarray = [];
           console.error("Error getting documents: ", error);
       });
 
-
+// fill report table form the data stored in our arrays from firebase
       function populateTable(IDarray, descriptionArray, LPNarray, ImageArray, locationarray) {
         const tableBody = document.getElementById('data-table-body');
       
@@ -81,7 +81,7 @@ const locationarray = [];
           const img = document.createElement('img');
           img.src = ImageArray[i];
           img.alt = 'Report Image';
-          img.style.width = '50px'; // Adjust the size as needed
+          img.style.width = '50px';
           imageCell.appendChild(img);
 
           const locationcell = newRow.insertCell(4);
@@ -116,13 +116,13 @@ setTimeout(function() {
     }
 }, 3000);
 // Output Array Values
-console.log("IDARRAY");
-console.log(IDarray);
-// console.log("DATA WORKED")
-console.log("DESCRIPTIONARRAY");
-console.log(descriptionArray);
-console.log("LPNARRAY");
-console.log(LPNarray);
-console.log("IMAGEARRAY");
-console.log(ImageArray);
+// console.log("IDARRAY");
+// console.log(IDarray);
+// // console.log("DATA WORKED")
+// console.log("DESCRIPTIONARRAY");
+// console.log(descriptionArray);
+// console.log("LPNARRAY");
+// console.log(LPNarray);
+// console.log("IMAGEARRAY");
+// console.log(ImageArray);
 

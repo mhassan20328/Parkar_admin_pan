@@ -115,7 +115,7 @@ function downloadAnnotations() {
     const imageBlob = dataURItoBlob(image.src);
     const darknetText = darknetFormat.join('\n');
 
-    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); // Current date and time stamp
+    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); 
     const imageFilename = `image_${timestamp}.png`;
     const annotationFilename = `annotation_${timestamp}.txt`;
 
@@ -142,7 +142,6 @@ function dataURItoBlob(dataURI) {
   return new Blob([ab], { type: mimeString });
 }
 
-// Next and previous image buttons
 document.getElementById('next-image').addEventListener('click', () => {
   if (currentImageIndex < images.length - 1) {
     setCurrentImage(currentImageIndex + 1);

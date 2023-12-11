@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff; /* White background */
-    color: #000000; /* Black text */
+    background-color: #ffffff; 
+    color: #000000; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,8 +11,8 @@ body {
 }
 
 header {
-    background-color: #f7f7f9; /* Blue background for header */
-    color: #335678; /* White text for header */
+    background-color: #f7f7f9; 
+    color: #335678; 
     padding: 10px;
     width: 100%;
     display: flex;
@@ -48,20 +48,20 @@ table {
 }
 
 th, td {
-    border: 1px solid #000000; /* Black border */
+    border: 1px solid #000000; 
     padding: 10px;
     text-align: center;
 }
 
 th {
-    background-color: #0a0a39; /* Blue background for table header */
-    color: #ffffff; /* White text for table header */
+    background-color: #0a0a39; 
+    color: #ffffff; 
 }
 
 tr:nth-child(even) {
-    background-color: #EFEFEF; /* Light gray background for even rows */
+    background-color: #EFEFEF; 
 }
 
 tr:nth-child(odd) {
-    background-color: #ffffff; /* White background for odd rows */
+    background-color: #ffffff; 
 }

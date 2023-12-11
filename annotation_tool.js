@@ -11,7 +11,61 @@ let annotations = [];
 let currentAnnotations = [];
 // jszip object to create zip file
 let zip = new JSZip();
+// Download annotations function
+function downloadAnnotations() {
+  for (let i = 0; i < annotations.length; i++) {
+    const imageAnnotations = annotations[i];
+    const image = images[i];
+    const darknetFormat = [];
 
+    for (let j = 0; j < imageAnnotations.length; j++) {
+      const annotation = imageAnnotations[j];
+      const x = annotation.x + annotation.width / 2;
+      const y = annotation.y + annotation.height / 2;
+      const width = annotation.width;
+      const height = annotation.height;
+
+      darknetFormat.push(`0 ${x} ${y} ${width} ${height}`);
+    }
+
+    const imageBlob = dataURItoBlob(image.src);
+    const darknetText = darknetFormat.join('\n');
+// generating the timestamp for the image and annotation file name
+    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); 
+    const imageFilename = `${timestamp}.png`;
+    const annotationFilename = `${timestamp}.txt`;
+
+    zip.file(imageFilename, imageBlob);
+    zip.file(annotationFilename, darknetText);
+  }
+
+  // Generate and download the ZIP file
+  zip.generateAsync({ type: "blob" })
+    .then(function (content) {
+      saveAs(content, "annotations.zip");
+    });
+}
+// Function to draw the annotations on the canvas
+
+function drawAnnotations() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  if (images.length > 0) {
+    ctx.drawImage(images[currentImageIndex], 0, 0, canvas.width, canvas.height);
+  }
+
+  for (let i = 0; i < currentAnnotations.length; i++) {
+    const annotation = currentAnnotations[i];
+    const x = annotation.x * canvas.width;
+    const y = annotation.y * canvas.height;
+    const width = annotation.width * canvas.width;
+    const height = annotation.height * canvas.height;
+
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(x, y, width, height);
+  }
+}
 document.getElementById('image-upload').addEventListener('change', (event) => {
   const files = event.target.files;
   images = [];
@@ -35,11 +89,12 @@ document.getElementById('image-upload').addEventListener('change', (event) => {
         }
       };
     };
-
+// we read the file as a data URL
     reader.readAsDataURL(file);
   }
 });
 
+// Mouse down event listener for the drawing of the annotations on the canvas
 canvas.addEventListener('mousedown', (event) => {
   const rect = canvas.getBoundingClientRect();
   const x = event.clientX - rect.left;
@@ -51,7 +106,7 @@ canvas.addEventListener('mousedown', (event) => {
     width: 0,
     height: 0
   });
-
+// logging the annotation x and y to verify the annotation
   console.log(`Annotation X: ${x / canvas.width}, Y: ${y / canvas.height}`);
 
   canvas.addEventListener('mousemove', onMouseMove);
@@ -81,59 +136,8 @@ function setCurrentImage(index) {
   drawAnnotations();
 }
 
-function drawAnnotations() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  if (images.length > 0) {
-    ctx.drawImage(images[currentImageIndex], 0, 0, canvas.width, canvas.height);
-  }
 
-  for (let i = 0; i < currentAnnotations.length; i++) {
-    const annotation = currentAnnotations[i];
-    const x = annotation.x * canvas.width;
-    const y = annotation.y * canvas.height;
-    const width = annotation.width * canvas.width;
-    const height = annotation.height * canvas.height;
-
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(x, y, width, height);
-  }
-}
-
-function downloadAnnotations() {
-  for (let i = 0; i < annotations.length; i++) {
-    const imageAnnotations = annotations[i];
-    const image = images[i];
-    const darknetFormat = [];
-
-    for (let j = 0; j < imageAnnotations.length; j++) {
-      const annotation = imageAnnotations[j];
-      const x = annotation.x + annotation.width / 2;
-      const y = annotation.y + annotation.height / 2;
-      const width = annotation.width;
-      const height = annotation.height;
-
-      darknetFormat.push(`0 ${x} ${y} ${width} ${height}`);
-    }
-
-    const imageBlob = dataURItoBlob(image.src);
-    const darknetText = darknetFormat.join('\n');
-
-    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, ''); 
-    const imageFilename = `${timestamp}.png`;
-    const annotationFilename = `${timestamp}.txt`;
-
-    zip.file(imageFilename, imageBlob);
-    zip.file(annotationFilename, darknetText);
-  }
-
-  // Generate and download the ZIP file
-  zip.generateAsync({ type: "blob" })
-    .then(function (content) {
-      saveAs(content, "annotations.zip");
-    });
-}
 
 // Function to convert data URI to Blob
 function dataURItoBlob(dataURI) {
